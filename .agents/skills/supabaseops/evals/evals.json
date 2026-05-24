@@ -1,0 +1,46 @@
+{
+  "skill_name": "supabaseops",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up a new Supabase project locally and create my first migration to add a 'profiles' table with columns: id (uuid, references auth.users), username (text, unique), created_at (timestamptz, default now()). Walk me through everything I need to do.",
+      "expected_output": "A complete step-by-step guide covering: supabase init, supabase login, supabase link, supabase start, supabase migration new, the SQL for the profiles table, and supabase db reset to apply locally",
+      "files": [],
+      "expectations": [
+        "Mentions supabase init to initialize the project",
+        "Mentions supabase login for authentication",
+        "Mentions supabase link --project-ref to link to remote project",
+        "Mentions supabase start to start local containers",
+        "Mentions supabase migration new to create migration file",
+        "Provides the SQL DDL for the profiles table with all three columns",
+        "Mentions supabase db reset or supabase migration up to apply migration locally"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need to deploy an edge function called 'send-email' to my Supabase project. The function uses a SendGrid API key that should be stored as a secret. Show me the full workflow.",
+      "expected_output": "Steps covering: supabase functions new send-email, setting SENDGRID_API_KEY as a secret with supabase secrets set, supabase functions serve for local testing, and supabase functions deploy send-email for deployment. Should mention auth requirement.",
+      "files": [],
+      "expectations": [
+        "Mentions supabase functions new send-email to scaffold the function",
+        "Mentions supabase secrets set to store the SendGrid API key",
+        "Mentions supabase functions serve for local testing",
+        "Mentions supabase functions deploy send-email to deploy",
+        "Mentions authentication requirement (supabase login) before deploying"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "My Supabase project already has tables set up remotely. I want to pull the remote database schema into my local project and then generate TypeScript types from it. How do I do this?",
+      "expected_output": "Steps: supabase db pull to fetch remote schema as migration files, then supabase gen types --lang typescript to generate types (with --project-id flag or --local flag). Should mention linking requirement for db pull.",
+      "files": [],
+      "expectations": [
+        "Mentions supabase db pull to pull remote schema",
+        "Mentions that project must be linked (supabase link) before db pull",
+        "Mentions supabase gen types --lang typescript for type generation",
+        "Shows how to pipe or save generated types to a file",
+        "Mentions either --project-id <ref> or --local flag for gen types command"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'WellWay';
+  src: url('/fonts/6608WellWay.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #00c950;
+  --color-primary-hover: #00b548;
+  --color-primary-light: #e6ffe6;
+  --font-wellway: 'WellWay', sans-serif;
+}
+
+body {
+  font-family: 'WellWay', sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Hide native number input spinner buttons globally to prevent overlap with endAdornments and placeholders */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
