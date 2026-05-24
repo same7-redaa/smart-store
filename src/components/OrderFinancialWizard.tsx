@@ -331,11 +331,11 @@ export const OrderFinancialWizard: React.FC<OrderFinancialWizardProps> = ({
   };
 
   return (
-    <div className="fixed top-0 left-0 bottom-0 right-0 lg:right-[var(--sidebar-width)] z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed top-0 left-0 bottom-0 right-0 z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md animate-fadeIn">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full h-full bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden text-right max-w-5xl mx-auto"
+        className="w-full h-full bg-white/90 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-right max-w-5xl mx-auto"
       >
         {/* Header */}
         <div className="p-5 border-b border-gray-200 flex items-center justify-between bg-gray-50/80 sticky top-0 z-10">

@@ -314,7 +314,7 @@ export const Layout: React.FC<{ children: React.ReactNode; activePage: PageType;
             </button>
             <div className="flex items-center gap-2">
                 <span className="text-primary">
-                   {(activePage === 'add-product' || activePage === 'edit-product' || activePage === 'view-product' || activePage === 'add-category' || activePage === 'wastage') ? <Package size={20} /> : (activePage === 'add-order' || activePage === 'edit-order') ? <ShoppingCart size={20} /> : activePage === 'view-order' ? <ShoppingCart size={20} /> : activePage === 'edit-customer' ? <Users size={20} /> : activePage === 'view-supplier' || activePage === 'categories' ? <Package size={20} /> : activePage === 'add-user' || activePage === 'edit-user' ? <Settings size={20} /> : navItems.find(item => item.id === activePage)?.icon}
+                   {(activePage === 'add-product' || activePage === 'edit-product' || activePage === 'view-product' || activePage === 'add-category' || activePage === 'wastage') ? <Package size={20} /> : (activePage === 'add-order' || activePage === 'edit-order') ? <ShoppingCart size={20} /> : activePage === 'view-order' ? <ShoppingCart size={20} /> : activePage === 'edit-customer' ? <Users size={20} /> : (activePage === 'view-supplier' || activePage === 'categories' || activePage === 'attributes') ? <Package size={20} /> : activePage === 'add-user' || activePage === 'edit-user' ? <Settings size={20} /> : navItems.find(item => item.id === activePage)?.icon}
                 </span>
                 <h1 className="text-lg sm:text-xl font-bold text-gray-800">
                  {activePage === 'add-product' ? 'إضافة منتج جديد' : 
@@ -333,6 +333,7 @@ export const Layout: React.FC<{ children: React.ReactNode; activePage: PageType;
                    activePage === 'edit-expense' ? 'تعديل المصروف' :
                    activePage === 'add-category' ? 'إضافة فئة جديدة' :
                    activePage === 'categories' ? 'ادارة الفئات' :
+                   activePage === 'attributes' ? 'إدارة المتغيرات' :
                    activePage === 'add-user' ? 'مستخدم جديد' :
                    activePage === 'edit-user' ? 'تعديل مستخدم' :
                    activePage === 'wastage' ? 'إدارة الهالك والتالف' :

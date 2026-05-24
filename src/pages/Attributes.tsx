@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sliders, Plus, Trash2, Edit, Save, X, Tag } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import FloatingInput from '../components/FloatingInput';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface GlobalAttribute {
   id: string;
@@ -13,6 +14,7 @@ export const Attributes: React.FC<{ setActivePage?: (p: any) => void }> = () => 
   const { notify, confirm } = useApp();
   const [attributes, setAttributes] = useState<GlobalAttribute[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [showStats, setShowStats] = useState(false);
   
   // Temp states for editing/creating
   const [tempName, setTempName] = useState('');
@@ -109,18 +111,64 @@ export const Attributes: React.FC<{ setActivePage?: (p: any) => void }> = () => 
 
   return (
     <div className="flex flex-col h-full pb-10">
-      {/* Top Action Bar - Removed title to avoid duplication */}
+      {/* Top Action Bar */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-3 shrink-0 bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-4">
-        <div className="flex-1"></div>
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <button 
+            onClick={() => setShowStats(!showStats)}
+            className={`flex items-center gap-2 px-3 py-2 border rounded-lg text-sm font-medium transition-colors ${
+              showStats 
+                ? 'bg-primary-light border-primary-light text-primary' 
+                : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            <Sliders size={16} />
+            <span>الإحصائيات</span>
+          </button>
+        </div>
         <button 
           onClick={handleAddNew}
           disabled={editingId !== null}
-          className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-hover transition-colors shadow-sm disabled:opacity-50"
+          className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-hover transition-colors shadow-sm disabled:opacity-50 w-full sm:w-auto"
         >
           <Plus size={20} />
           <span>إضافة متغير جديد</span>
         </button>
       </div>
+
+      {/* Stats */}
+      <AnimatePresence>
+        {showStats && (
+          <motion.div 
+            initial={{ height: 0, opacity: 0, marginBottom: 0 }} 
+            animate={{ height: 'auto', opacity: 1, marginBottom: 16 }} 
+            exit={{ height: 0, opacity: 0, marginBottom: 0 }} 
+            transition={{ duration: 0.2 }} 
+            className="overflow-hidden shrink-0"
+          >
+            <div className="p-1 pb-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
+                  <p className="text-gray-500 font-medium">إجمالي المتغيرات</p>
+                  <h3 className="text-2xl font-bold text-gray-800">{attributes.length}</h3>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
+                  <p className="text-gray-500 font-medium">إجمالي القيم المسجلة</p>
+                  <h3 className="text-2xl font-bold text-primary">
+                    {attributes.reduce((sum, a) => sum + a.values.length, 0)}
+                  </h3>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
+                  <p className="text-gray-500 font-medium">متوسط القيم للمتغير</p>
+                  <h3 className="text-2xl font-bold text-gray-800">
+                    {attributes.length ? Math.round(attributes.reduce((sum, a) => sum + a.values.length, 0) / attributes.length) : 0}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {editingId && (
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-primary/20 mb-4 animate-fadeIn">

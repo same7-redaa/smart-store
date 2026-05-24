@@ -480,7 +480,7 @@ export const ViewOrder: React.FC<ViewOrderProps> = ({ setActivePage }) => {
 
       {/* ── Replace Modal ─────────────────────────── */}
       {replaceModal && (
-        <div className="fixed top-0 left-0 bottom-0 right-0 lg:right-[var(--sidebar-width)] z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md" onClick={() => setReplaceModal(null)}>
+        <div className="fixed top-0 left-0 bottom-0 right-0 z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md" onClick={() => setReplaceModal(null)}>
           <div className="max-w-3xl w-full mx-auto my-auto bg-white/90 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-full" onClick={e => e.stopPropagation()}>
             <div className="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-gray-50/80 shrink-0">
               <button onClick={() => setReplaceModal(null)} className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-200 hover:text-gray-700 transition-all cursor-pointer">
@@ -546,7 +546,7 @@ export const ViewOrder: React.FC<ViewOrderProps> = ({ setActivePage }) => {
 
       {/* ── Return Modal ──────────────────────────── */}
       {returnModal && (
-        <div className="fixed top-0 left-0 bottom-0 right-0 lg:right-[var(--sidebar-width)] z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md" onClick={() => setReturnModal(null)}>
+        <div className="fixed top-0 left-0 bottom-0 right-0 z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md" onClick={() => setReturnModal(null)}>
           <div className="max-w-3xl w-full mx-auto my-auto bg-white/90 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-full" onClick={e => e.stopPropagation()}>
             <div className="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-gray-50/80 shrink-0">
               <button onClick={() => setReturnModal(null)} className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-200 hover:text-gray-700 transition-all cursor-pointer">
@@ -617,7 +617,7 @@ export const ViewOrder: React.FC<ViewOrderProps> = ({ setActivePage }) => {
 
       {/* ── Cancel Modal ──────────────────────────── */}
       {cancelModal && (
-        <div className="fixed top-0 left-0 bottom-0 right-0 lg:right-[var(--sidebar-width)] z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md" onClick={() => setCancelModal(false)}>
+        <div className="fixed top-0 left-0 bottom-0 right-0 z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md" onClick={() => setCancelModal(false)}>
           <div className="max-w-2xl w-full mx-auto my-auto bg-white/90 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-full" onClick={e => e.stopPropagation()}>
             <div className="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-gray-50/80 shrink-0">
               <button onClick={() => setCancelModal(false)} className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-200 hover:text-gray-700 transition-all cursor-pointer">

@@ -113,6 +113,7 @@ npm run lint   # tsc --noEmit
 - [2026-05-24] Created automated GitHub Actions CI/CD deployment workflow (`.github/workflows/deploy.yml`) for Hostinger FTP integration.
 - [2026-05-24] Configured and successfully launched GitHub Actions automated CI/CD deployment to Hostinger Shared Hosting with complete secrets integration.
 - [2026-05-24] Diagnosed GitHub Actions workflow failure as a GitHub account billing lock, and created local VS Code SFTP backup deployment configuration (`.vscode/sftp.json`) with new Hostinger credentials.
+- [2026-05-24] Integrated collapsible stats in Attributes page, resolved Topbar titles mapping for Attributes/Categories, and expanded modal overlays to cover the sidebar navigation for complete backdrop blur.
 
 
 

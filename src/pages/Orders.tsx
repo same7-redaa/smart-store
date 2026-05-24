@@ -1119,7 +1119,7 @@ const getPresetRange = (preset: string): { from: string; to: string } | null => 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed top-0 left-0 bottom-0 right-0 lg:right-[var(--sidebar-width)] z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md"
+            className="fixed top-0 left-0 bottom-0 right-0 z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md"
             onClick={() => setPendingCancel(null)}
           >
             <motion.div
