@@ -316,8 +316,8 @@ export const ViewSupplier: React.FC<{ setActivePage: (p: any) => void }> = ({ se
 
       {/* Payment Modal */}
       {showPayModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4" onClick={() => setShowPayModal(false)}>
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-md" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-md p-4" onClick={() => setShowPayModal(false)}>
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 w-full max-w-md" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between p-4 border-b border-gray-100">
               <div className="flex items-center gap-2">
                 <BadgeDollarSign size={18} className="text-green-600" />

@@ -263,8 +263,8 @@ export const Categories: React.FC<{ setActivePage?: (p: any) => void }> = ({ set
       {/* Add/Edit Modal */}
       <AnimatePresence>
         {showForm && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4" onClick={() => setShowForm(false)}>
-            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ type: 'spring', duration: 0.3 }} className="bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-md" onClick={e => e.stopPropagation()}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-md p-4" onClick={() => setShowForm(false)}>
+            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ type: 'spring', duration: 0.3 }} className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 w-full max-w-md" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
                 <h2 className="text-sm font-bold text-gray-800">{editItem ? 'تعديل الفئة' : 'إضافة فئة جديدة'}</h2>
                 <button onClick={() => setShowForm(false)} className="p-1.5 hover:bg-gray-100 rounded-lg text-gray-500 transition-colors"><X size={16} /></button>

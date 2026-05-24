@@ -61,7 +61,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
       {confirmState && confirmState.visible && (
         <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-md flex items-center justify-center p-4" onClick={rejectConfirm}>
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6" onClick={e => e.stopPropagation()}>
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl w-full max-w-sm p-6 border border-white/20" onClick={e => e.stopPropagation()}>
             <h3 className="text-lg font-bold text-gray-800 mb-2">{confirmState.title}</h3>
             <p className="text-sm text-gray-600 mb-6">{confirmState.message}</p>
             <div className="flex gap-3">

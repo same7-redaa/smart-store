@@ -1814,8 +1814,8 @@ export const Purchases: React.FC<{ setActivePage?: (page: any) => void }> = ({ s
       {/* View Supplier Modal */}
       <AnimatePresence>
         {selectedSupplier && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4" onClick={() => setSelectedSupplier(null)}>
-            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ type: 'spring', duration: 0.3 }} className="bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-lg max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-md p-4" onClick={() => setSelectedSupplier(null)}>
+            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ type: 'spring', duration: 0.3 }} className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 w-full max-w-lg max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
                 <h2 className="text-sm font-bold text-gray-800">{selectedSupplier.name}</h2>
                 <button onClick={() => setSelectedSupplier(null)} className="p-1.5 hover:bg-gray-100 rounded-lg text-gray-500 transition-colors"><X size={16} /></button>
@@ -1872,8 +1872,8 @@ export const Purchases: React.FC<{ setActivePage?: (page: any) => void }> = ({ s
       {/* Add/Edit Supplier Modal */}
       <AnimatePresence>
         {showForm && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4" onClick={() => setShowForm(false)}>
-            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ type: 'spring', duration: 0.3 }} className="bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-lg max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-md p-4" onClick={() => setShowForm(false)}>
+            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ type: 'spring', duration: 0.3 }} className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 w-full max-w-lg max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
                 <h2 className="text-sm font-bold text-gray-800">{editSupplier ? 'تعديل المورد' : 'إضافة مورد جديد'}</h2>
                 <button onClick={() => setShowForm(false)} className="p-1.5 hover:bg-gray-100 rounded-lg text-gray-500 transition-colors"><X size={16} /></button>
@@ -2210,8 +2210,8 @@ export const System: React.FC<SystemProps> = ({ setActivePage }) => {
 
       {/* ── Delete Confirm ────────────────────────── */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center">
-          <div className="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-xl" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-md z-50 flex items-center justify-center">
+          <div className="bg-white/90 backdrop-blur-xl border border-white/20 rounded-2xl p-6 max-w-sm w-full mx-4 shadow-xl" onClick={e => e.stopPropagation()}>
             <h3 className="text-base font-bold text-red-600 mb-2">حذف مستخدم</h3>
             <p className="text-sm text-slate-500 mb-6">هل أنت متأكد من حذف هذا المستخدم؟</p>
             <div className="flex items-center gap-2">

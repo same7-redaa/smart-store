@@ -165,14 +165,14 @@ export const Layout: React.FC<{ children: React.ReactNode; activePage: PageType;
       {/* Mobile Sidebar Overlay */}
       {isMobileOpen && (
         <div 
-          className="fixed inset-0 z-[55] bg-black/40 backdrop-blur-sm lg:hidden" 
+          className="fixed inset-0 z-[55] bg-black/40 backdrop-blur-md lg:hidden" 
           onClick={() => setIsMobileOpen(false)}
         />
       )}
 
       {/* Sidebar */}
       <aside 
-        className={`fixed inset-y-0 right-0 z-[60] bg-white border-l border-gray-200 transition-all duration-300 flex flex-col overflow-hidden shrink-0
+        className={`fixed inset-y-0 right-0 z-[60] bg-white/85 backdrop-blur-xl border-l border-gray-200/50 transition-all duration-300 flex flex-col overflow-hidden shrink-0
           lg:relative lg:translate-x-0
           ${isMobileOpen ? 'translate-x-0 w-[240px]' : 'translate-x-full w-[240px]'}
           ${isDesktopOpen ? 'lg:w-[240px]' : 'lg:w-0 lg:border-none'}

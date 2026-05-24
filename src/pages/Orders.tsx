@@ -1119,7 +1119,7 @@ const getPresetRange = (preset: string): { from: string; to: string } | null => 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed top-0 left-0 bottom-0 right-0 lg:right-[var(--sidebar-width)] z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-sm"
+            className="fixed top-0 left-0 bottom-0 right-0 lg:right-[var(--sidebar-width)] z-[100] p-4 sm:p-6 flex flex-col bg-black/40 backdrop-blur-md"
             onClick={() => setPendingCancel(null)}
           >
             <motion.div
@@ -1127,7 +1127,7 @@ const getPresetRange = (preset: string): { from: string; to: string } | null => 
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 10 }}
               transition={{ type: 'spring', duration: 0.35 }}
-              className="max-w-xl w-full mx-auto my-auto bg-white rounded-2xl shadow-2xl p-6 sm:p-10 overflow-y-auto max-h-full"
+              className="max-w-xl w-full mx-auto my-auto bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-10 overflow-y-auto max-h-full"
               onClick={e => e.stopPropagation()}
             >
               <div className="flex items-center gap-3 pb-6 border-b border-gray-100 mb-6">
